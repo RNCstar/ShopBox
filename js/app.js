@@ -35,4 +35,51 @@ const renderProduct = () => {
             </div>`;
   });
 };
+
+let cart = {
+  items: [],
+  total: 0,
+};
+
+const renderItems = () => {
+  const cartDiv = document.querySelector(".cartItems");
+  cartDiv.innerHTML = "";
+  const totalPriceEL = document.querySelector(".cartTotalPrice");
+  let totalPrice = 0;
+  if (cart.items.length === 0) {
+    cartDiv.innerHTML = "هیجی هنوز نخریدی";
+  }
+  cart.items.forEach((item) => {
+    totalPrice += item.total;
+    cartDiv.innerHTML += `<div class="cartItem">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-danger">حذف</button>
+                </div>
+                <div class="col-md-4 p-8">
+                  <div class="qty">${item.qty}</div>
+                </div>
+                <div class="col-md-4">
+                  <h3 class="cartItemTitle">${item.name}</h3>
+                </div>
+              </div>`;
+  });
+  totalPriceEL.innerHTML = `مجموع کل : ${totalPrice} $`;
+};
+
+const addToCart = (productIndex) => {
+  const product = products[productIndex];
+  let existingProduct = false;
+  const newCartItem = cart.items.reduce((state, item) => {
+    if (item.name === product.name) {
+      existingProduct = true;
+      const newItem = {
+        ...item,
+        qty: item.qty + 1,
+        total: (item.qty + 1) * item.price,
+      };
+    }
+  }, []);
+};
+
 renderProduct();
+renderItems();
