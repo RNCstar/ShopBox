@@ -47,6 +47,8 @@ body {
 
 .productTitle {
     font-size: 20px;
+    font-family: cursive !important;
+    margin: 20px 0;
 }
 
 .productPrice {
