@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- cdn bootStrap -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <!-- END    cdn bootStrap -->
+    <!-- my link CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/FavIcon.png" type="image/x-icon" />
+    <title>RNC | STAR</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="products">
+            <div class="product card">
+              <div class="producImg">
+                <img src="img/1.png" class="img-fluid" alt="" />
+              </div>
+              <h2 class="productTitle">Iphone12</h2>
+              <h2 class="productPrice">2000$</h2>
+              <button type="button" class="btn btn-primary">
+                افزودن بع سبد خرید
+              </button>
+            </div>
+            <div class="product card">
+              <div class="producImg">
+                <img src="img/2.webp" class="img-fluid" alt="" />
+              </div>
+              <h2 class="productTitle">Iphone13</h2>
+              <h2 class="productPrice">3500$</h2>
+              <button type="button" class="btn btn-primary">
+                افزودن بع سبد خرید
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="cart">
+            <h2 class="cartTitle">سبد خرید شما</h2>
+            <div class="cartLine"></div>
+            <div class="cartItems">
+              <div class="cartItem">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-danger">حذف</button>
+                </div>
+                <div class="col-md-4 p-8">
+                  <div class="qty">2</div>
+                </div>
+                <div class="col-md-4">
+                  <h3 class="cartItemTitle">Iphone12</h3>
+                </div>
+              </div>
+            </div>
+            <div class="row cartTotalPrice">مجموع ما:</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- js BootStrap -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- END    js BootStrap -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
