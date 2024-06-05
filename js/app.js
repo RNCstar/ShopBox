@@ -59,7 +59,7 @@ const renderCartItems = () => {
     cartDiv.innerHTML += `
         <div class="cartItem">
             <div class="col-md-4">
-                <button class="btn btn-danger">حذف</button>
+                <button class="btn btn-danger" onclick="removeFormCart('${item.name}')">حذف</button>
             </div>
             <div class="col-md-4 p-8">
                 <div class="qty">${item.qty}</div>
@@ -109,6 +109,30 @@ const addToCart = (productIndex) => {
   };
   renderCartItems();
 };
+const removeFormCart = (productName) => {
+  let newCartItems = cart.items.reduce((state, item) => {
+    if (item.name === productName) {
+      const newItem = {
+        ...item,
+        qty: item.qty - 1,
+        total: (item.qty - 1) * item.price,
+      };
 
+      if (newItem.qty > 0) {
+        return [...state, newItem];
+      } else {
+        return state;
+      }
+    }
+
+    return [...state, item];
+  }, []);
+
+  cart = {
+    ...cart,
+    items: newCartItems,
+  };
+  renderCartItems();
+};
 renderProducts();
 renderCartItems();
